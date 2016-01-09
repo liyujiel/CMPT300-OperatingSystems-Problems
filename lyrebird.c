@@ -16,6 +16,7 @@
 int toInt(char input);
 char toChar(int input);
 unsigned long long expmod(unsigned long long base);
+char *getCurrTime();
 
 
 int main(int argc, char* argv[])
@@ -154,4 +155,16 @@ unsigned long long expmod(unsigned long long base)
 		exponent /= 2;
 	}
 	return result;
+}
+
+
+// This function is to calculate the current time
+// PRE: No precondition
+// POST: Returns a pointer to a character array
+char *getCurrTime()
+{
+	time_t currTime = time(NULL);
+	char *adjustedTime = ctime(&currTime);
+	adjustedTime[strlen(adjustedTime) - 1] = '\0';	// Eliminating the newline character
+	return adjustedTime;
 }

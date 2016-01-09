@@ -11,7 +11,7 @@ Description:
 
 
 Build:
-	You can use  "make" or "make all"  to build the executable file.
+	memwatch.c and memwatch.h is needed for compilation. You can use "make" or "make all"  to build the executable file.
 
 
 Run:
