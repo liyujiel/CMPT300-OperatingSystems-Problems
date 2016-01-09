@@ -7,7 +7,7 @@ TA: 				Scott Kristjanson
 
 
 Description:
-	The program, lyrebird, decrypts plain text tweets and saves the output into a file you specified in console.
+	The program, lyrebird, decrypts plain text tweets and saves the output into a file you specified in console. In the lastest update, you can user the client and server to form a distributed system to perform decryption. The server reads from config file for any text filename that needs to decrypt and sends the name to a client. Decryption is done in a client.
 
 
 Build:
@@ -29,6 +29,10 @@ Configuration file:
 
 	The input file and output file location is seperated by one space. AND NO SPACE AFTER OUTPUT FILENAME. Otherwise that tweet may not be decrypted successfully due to invalid argument.
 
+	
+Known issues:
+	
+	Deadlock may persist when multiple clients are communicating with the server.
 
 Acknowledgement:
 
