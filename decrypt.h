@@ -14,11 +14,9 @@
 #define		MAX_TWEETLINE_SIZE		166		// Maximum character of a line in tweets file
 #define		MAX_NOEXTRA_SIZE		146		// Maximum character of a line in tweets file after eliminating 8th characters
 
-
 int					decrypt( char *input, char *output );
 int 				toInt( char input );
 char 				toChar( int input );
-char*				getCurrTime();
 unsigned long long 	expmod( unsigned long long base );
 
 #endif

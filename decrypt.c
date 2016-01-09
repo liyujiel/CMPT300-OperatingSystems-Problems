@@ -10,11 +10,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>		// Used for pow() and abs()
-#include <time.h>		// For ctime()
 #include <string.h>		// For strlen()
 #include <unistd.h>		// Used for getpid()
 
 #include "decrypt.h"
+#include "helper.h"
 #include "memwatch.h"
 
 // Main decryption algorithm
@@ -26,13 +26,11 @@ int decrypt( char *input, char *output )
 	FILE *inFile = fopen(input, "r");
 	FILE *outFile = fopen(output, "w");
 
-	if( inFile == NULL ) { // File does not exist
-		fprintf(stderr, "[%s] Process #%d | Error: input file does not exist.\n", getCurrTime(), getpid());
+	if( inFile == NULL ) // File does not exist
 		return 1;
-	} else if( outFile == NULL ) {
-		fprintf(stderr, "[%s] Process #%d | Error: output file did not open successfully.\n", getCurrTime(), getpid());
-		return 1;
-	} else {
+	else if( outFile == NULL )
+		return 2;
+	else {
 
 		char inFileLine[MAX_TWEETLINE_SIZE];
 
@@ -152,16 +150,4 @@ unsigned long long expmod(unsigned long long base)
 		exponent /= 2;
 	}
 	return result;
-}
-
-
-// This function is to calculate the current time
-// PRE: No precondition
-// POST: Returns a pointer to a character array
-char *getCurrTime()
-{
-	time_t currTime = time(NULL);
-	char *adjustedTime = ctime(&currTime);
-	adjustedTime[strlen(adjustedTime) - 1] = '\0';	// Eliminating the newline character
-	return adjustedTime;
 }
