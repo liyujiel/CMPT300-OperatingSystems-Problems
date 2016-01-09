@@ -17,9 +17,17 @@ Build:
 Run:
 	Usage of this program is the following:
 
-					$  ./lyrebird <input filename> <output filename>
+						$  ./lyrebird <config filename> <log file>
 
-	Where the "<input filename>" is the filename that contains the encrypted text and you want the program to decrypt while the "<output filename>" is the filename taht you want the output text to be saved to.
+	Where the "<config filename>" is the location that contains the configuration file, which contains one input and output file location each line. For more details, please look at the configuration file section.
+
+
+Configuration file:
+	The format for one single input tweet and output location should look like this:
+
+				<input filename> <output filename>
+
+	The input file and output file location is seperated by one space. AND NO SPACE AFTER OUTPUT FILENAME. Otherwise that tweet may not be decrypted successfully due to invalid argument.
 
 
 Acknowledgement:
@@ -32,3 +40,8 @@ Acknowledgement:
 2. Exponention by Squaring
 
 	For this part, I consulted Wikipedia, and I used an algorithm provided on the "Exponention by Squaring" page of Wikipedia.
+
+3. Use of select() function
+	http://jhshi.me/2013/11/02/use-select-to-monitor-multiple-file-descriptors/
+	
+	This blog briefly describes how to use the select() function to monitor any changes made to a file descriptor. The original post is using select() to monitor a socket. And I got an idea, similarly, how to use it in pipes.
