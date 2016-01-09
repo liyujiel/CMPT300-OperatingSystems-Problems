@@ -6,3 +6,5 @@ lyrebird: memwatch.c memwatch.h lyrebird.c
 
 clean:
 	rm -f *.o lyrebird
+	rm -f memwatch.log
+	
