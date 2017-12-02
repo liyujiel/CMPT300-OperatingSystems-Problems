@@ -1,8 +1,17 @@
+TARGET_NAME = pcmodel
+CCARGS = -Wall -Wextra
+
 all:
-	gcc -Wall -Wextra -pthread pcmodel.c
+	gcc -c $(CCARGS) helpers.c
+	gcc -c $(CCARGS) queue.c
+	gcc -c $(CCARGS) running_status.c
+	gcc -c $(CCARGS) workers.c
+	gcc -c $(CCARGS) pcmodel.c
+	gcc -pthread *.o -o $(TARGET_NAME)
+	rm -r *.o
 
 run:
-	./a.out
+	./$(TARGET_NAME)
 
 clean:
-	rm -rf a.out
+	rm -rf $(TARGET_NAME) *.o

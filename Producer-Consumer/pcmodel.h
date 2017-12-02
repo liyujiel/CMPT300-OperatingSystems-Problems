@@ -1,0 +1,10 @@
+
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define TOOLS_TOTAL 3
+#define TOOLS_THRESHOLD 2
+#define QUEUE_CAPACITY__INPUT 10
+#define QUEUE_CAPACITY__OUTPUT 100000
+
+#endif
