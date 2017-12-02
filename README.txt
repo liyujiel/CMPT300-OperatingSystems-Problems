@@ -1,9 +1,3 @@
-Name: 				Peter Tan
-Student ID:			301251535
-SFU Username: 		junyuant
-Lecture Session: 	CMPT 300 D100
-Instructor: 		Brian Booth
-TA: 				Scott Kristjanson
 
 
 Description:
