@@ -1,14 +1,14 @@
+# Lyrebird
 
-
-Description:
+## Description
 	The program, lyrebird, decrypts plain text tweets and saves the output into a file you specified in console. In the lastest update, you can user the client and server to form a distributed system to perform decryption. The server reads from config file for any text filename that needs to decrypt and sends the name to a client. Decryption is done in a client.
 
 
-Build:
+## Build
 	memwatch.c and memwatch.h is needed for compilation. You can use "make" or "make all"  to build the executable file.
 
 
-Run:
+## Run
 	Usage of this program is the following:
 
 						$  ./lyrebird <config filename> <log file>
@@ -16,7 +16,7 @@ Run:
 	Where the "<config filename>" is the location that contains the configuration file, which contains one input and output file location each line. For more details, please look at the configuration file section.
 
 
-Configuration file:
+## Configuration file
 	The format for one single input tweet and output location should look like this:
 
 				<input filename> <output filename>
@@ -24,11 +24,11 @@ Configuration file:
 	The input file and output file location is seperated by one space. AND NO SPACE AFTER OUTPUT FILENAME. Otherwise that tweet may not be decrypted successfully due to invalid argument.
 
 	
-Known issues:
+## Known issues
 	
 	Deadlock may persist when multiple clients are communicating with the server.
 
-Acknowledgement:
+## Acknowledgement
 
 1. https://forums.techguy.org/threads/solved-assign-numbers-to-letters.967404/
 
