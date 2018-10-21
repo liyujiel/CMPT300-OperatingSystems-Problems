@@ -1,32 +1,32 @@
 # Lyrebird
 
 ## Description
-	The program, lyrebird, decrypts plain text tweets and saves the output into a file you specified in console. In the lastest update, you can user the client and server to form a distributed system to perform decryption. The server reads from config file for any text filename that needs to decrypt and sends the name to a client. Decryption is done in a client.
+This program decrypts plain text tweets and saves the output into a file which is specified in console. In the lastest update, you can use the client and server to form a distributed system to perform decryption. The server reads config file to find any text filename that needs to be decrypted and sends the filename to a client. Decryption is done in a client.
 
 
 ## Build
-	memwatch.c and memwatch.h is needed for compilation. You can use "make" or "make all"  to build the executable file.
+memwatch.c and memwatch.h is needed for compilation. You can use "make" or "make all"  to build the executable file.
 
 
 ## Run
-	Usage of this program is the following:
+Command for this program is the following:
 
-						$  ./lyrebird <config filename> <log file>
+    ./lyrebird <config filename> <log file>
 
-	Where the "<config filename>" is the location that contains the configuration file, which contains one input and output file location each line. For more details, please look at the configuration file section.
+where the "<config filename>" is the location that contains the configuration file, which contains one input and output file location each line. For more details, refer to the configuration file section.
 
 
 ## Configuration file
-	The format for one single input tweet and output location should look like this:
+The format for one single input tweet and output location need to the following format:
 
-				<input filename> <output filename>
+	<input filename> <output filename>
 
-	The input file and output file location is seperated by one space. AND NO SPACE AFTER OUTPUT FILENAME. Otherwise that tweet may not be decrypted successfully due to invalid argument.
+The input file and output file location is seperated by one space. ""NO SPACE AFTER OUTPUT FILENAME"". Otherwise that tweet may not be decrypted successfully due to invalid argument.
 
 	
 ## Known issues
 	
-	Deadlock may persist when multiple clients are communicating with the server.
+Deadlock may persist when multiple clients are communicating with the server.
 
 ## Acknowledgement
 
